@@ -2,10 +2,10 @@
   "name": "wdio-cucumber-parallel-execution",
   "version": "3.6.15",
   "description": "WebdriverIO Package to execute  Cucumber scenarios in parallel",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel --presets es2015 -d ./ src"
+    "build": "babel --presets es2015 -d dist src"
   },
   "keywords": [
     "webdriverio",
