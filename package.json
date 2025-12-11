@@ -16,7 +16,10 @@
     "feature",
     "scenario"
   ],
-  "author": "Simit Tomar",
+  "author": "mdeeter",
+  "contributors": [
+    "Simit Tomar (original author)"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",

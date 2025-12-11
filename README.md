@@ -1,5 +1,13 @@
 # wdio-cucumber-parallel-execution
 
+> **Note:** This is a fork of [SimitTomar/wdio-cucumber-parallel-execution](https://github.com/SimitTomar/wdio-cucumber-parallel-execution) with additional updates and maintenance.
+
+### Changes in this fork from original repo
+
+`ff` supports multiple feature paths
+
+---
+
 A WebdriverIO capability for running **Cucumber** scenarios within **Single/Multiple** Feature Files in parallel.
 
 The capability Segregates the entire Automation Suite into smallest independent chunks (Scenarios) and spawns numerous threads through WebdriverIOs maxInstances feature,thus reducing the Test Execution time drastically and allowing Teams to release much faster.
@@ -13,7 +21,7 @@ Handles merging of reports out of the box and provides a consolidated JSON Repo
 # Installation
 
 ```
-npm install wdio-cucumber-parallel-execution --save-dev
+npm install @mdeeter/wdio-cucumber-parallel-execution --save-dev
 ```
 
 # Architectural View
