@@ -84,9 +84,9 @@ if (argv.parallel === "true") {
 
 ```javascript
 const argv = require("yargs").argv;
-const wdioParallel = require('wdio-cucumber-parallel-execution');
+const wdioParallel = require("wdio-cucumber-parallel-execution");
 // The below module is used for cucumber html report generation
-const reporter = require('cucumber-html-reporter');
+const reporter = require("cucumber-html-reporter");
 const currentTime = new Date().toJSON().replace(/:/g, "-");
 
 const sourceSpecDirectory = `path/to/featureFilesDirectory`;
@@ -96,19 +96,21 @@ let featureFilePath = `${sourceSpecDirectory}/*.feature`;
 
 // If parallel execution is set to true, then create the Split the feature files
 // And store then in a tmp spec directory (created inside `the source spec directory)
-if (argv.parallel === 'true') {
-    tmpSpecDirectory = `${sourceSpecDirectory}/tmp`;
-    wdioParallel.performSetup({
-        sourceSpecDirectory: sourceSpecDirectory,
-        ff: "relative/path/from/source/to/feature-file.feature"
-        // or an array....
-        ff: ["relative/path/from/source/to/feature-file1.feature", "relative/path/from/source/to/feature-file2.feature"]
-        tmpSpecDirectory: tmpSpecDirectory,
-        cleanTmpSpecDirectory: true
-    });
-    featureFilePath = `${tmpSpecDirectory}/*.feature`
+if (argv.parallel === "true") {
+  tmpSpecDirectory = `${sourceSpecDirectory}/tmp`;
+  wdioParallel.performSetup({
+    sourceSpecDirectory: sourceSpecDirectory,
+    ff: "relative/path/from/source/to/feature-file.feature",
+    // or an array....
+    ff: [
+      "relative/path/from/source/to/feature-file1.feature",
+      "relative/path/from/source/to/feature-file2.feature"
+    ],
+    tmpSpecDirectory: tmpSpecDirectory,
+    cleanTmpSpecDirectory: true
+  });
+  featureFilePath = `${tmpSpecDirectory}/*.feature`;
 }
-
 ```
 
 ### Get Consolidated JSON Report Array
