@@ -1,11 +1,12 @@
 {
   "name": "@mdeeter/wdio-cucumber-parallel-execution",
-  "version": "3.6.15",
+  "version": "3.6.17",
   "description": "WebdriverIO Package to execute  Cucumber scenarios in parallel",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel --presets es2015 -d dist src"
+    "build": "babel --presets es2015 -d dist src",
+    "lint": "eslint src"
   },
   "keywords": [
     "webdriverio",
@@ -33,13 +34,14 @@
     "gherkin": "5.1.0",
     "glob": "7.1.3",
     "lodash": "4.17.21",
-    "uniqid": "5.0.3",
-    "node-dir": "0.1.17"
+    "node-dir": "0.1.17",
+    "uniqid": "5.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "chalk": "^2.4.2",
+    "eslint": "^9.39.2",
     "node-emoji": "^1.10.0"
   }
 }

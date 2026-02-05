@@ -82,7 +82,8 @@ if (argv.parallel === "true") {
   wdioParallel.performSetup({
     sourceSpecDirectory: sourceSpecDirectory,
     tmpSpecDirectory: tmpSpecDirectory,
-    cleanTmpSpecDirectory: true
+    cleanTmpSpecDirectory: true,
+    splitScenarioOutLineMultipleExamples: true,
   });
   featureFilePath = `${tmpSpecDirectory}/*.feature`;
 }
@@ -112,10 +113,10 @@ if (argv.parallel === "true") {
     // or an array....
     ff: [
       "relative/path/from/source/to/feature-file1.feature",
-      "relative/path/from/source/to/feature-file2.feature"
+      "relative/path/from/source/to/feature-file2.feature",
     ],
     tmpSpecDirectory: tmpSpecDirectory,
-    cleanTmpSpecDirectory: true
+    cleanTmpSpecDirectory: true,
   });
   featureFilePath = `${tmpSpecDirectory}/*.feature`;
 }
@@ -150,7 +151,7 @@ exports.config = {
   onComplete: () => {
     try {
       let consolidatedJsonArray = wdioParallel.getConsolidatedData({
-        parallelExecutionReportDirectory: parallelExecutionReportDirectory
+        parallelExecutionReportDirectory: parallelExecutionReportDirectory,
       });
 
       let jsonFile = `${parallelExecutionReportDirectory}report.json`;
@@ -165,14 +166,14 @@ exports.config = {
         reportSuiteAsScenarios: true,
         scenarioTimestamp: true,
         launchReport: true,
-        ignoreBadJsonFile: true
+        ignoreBadJsonFile: true,
       };
 
       reporter.generate(options);
     } catch (err) {
       console.log("err", err);
     }
-  }
+  },
 };
 ```
 
