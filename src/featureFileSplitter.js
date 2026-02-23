@@ -67,13 +67,14 @@ let featureFileSplitter = function () {
             scenariosWithTagFound = true;
           }
           filteredFeatures.forEach((splitFeature) => {
-            const splitFilePath = filePaths[fileSequence].split("/");
-            let parentFileName = splitFilePath[splitFilePath.length - 1];
+            const fileSeperator = process.platform === "win32" ? "\\" : "/";
+            var splitFilePath = filePaths[fileSequence].split(fileSeperator);
+            var parentFileName = splitFilePath[splitFilePath.length - 1];
             parentFileName = parentFileName.replace(".feature", "_");
-            const fileName = parentFileName + i + ".feature";
+            var fileName = parentFileName + i + ".feature";
             i++;
             fs.writeFileSync(
-              path.resolve(`${options.tmpSpecDirectory}/${fileName}`),
+              path.resolve(options.tmpSpecDirectory + fileSeperator + fileName),
               this.writeFeature(splitFeature.feature),
               "utf8",
             );
